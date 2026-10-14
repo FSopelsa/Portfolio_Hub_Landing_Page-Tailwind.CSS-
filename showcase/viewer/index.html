@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cinder Foundry — Sundown at Cinder Junction</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <canvas id="scene" aria-label="Interactive 3D asset viewer. Drag to orbit, scroll to zoom."></canvas>
+  <div id="loading"><div class="sigil">◌</div><span>Opening the foundry</span><small id="progress">Loading material studies…</small></div>
+  <header class="interface">
+    <div class="masthead"><a href="../../#featured" style="color:inherit;text-decoration:none;margin-right:10px;pointer-events:auto;padding:8px" aria-label="Back to the portfolio">←</a><span class="brandmark">⟡</span><span>SUNDOWN AT<br>CINDER JUNCTION</span></div>
+    <div class="edition"><span>THE FOUNDRY COLLECTION</span><span>01 — 04</span></div>
+  </header>
+  <main class="interface">
+    <section class="caption">
+      <div class="eyebrow" id="eyebrow">FRONTIER ENGINEERING / ALIEN RITUAL</div>
+      <h1 id="title">Cinder Foundry</h1>
+      <p id="description">Machines with a second life.<br>Sanctuaries with a purpose.</p>
+      <div class="specs"><span id="stats">Loading geometry</span><span id="material-note">Copper · ceramic · sandstone</span></div>
+    </section>
+    <aside class="controls" aria-label="Viewer controls">
+      <div class="control-label">THE COLLECTION</div>
+      <div class="asset-list" id="assets">
+        <button class="active" data-asset="ensemble"><span>00</span> Ensemble <i>↗</i></button>
+        <button data-asset="ember-reliquary"><span>01</span> Ember Reliquary <i>↗</i></button>
+        <button data-asset="wayfarer-condenser"><span>02</span> Wayfarer Condenser <i>↗</i></button>
+        <button data-asset="frontier-cell-cache"><span>03</span> Frontier Cell Cache <i>↗</i></button>
+        <button data-asset="junction-paving"><span>04</span> Junction Paving <i>↗</i></button>
+      </div>
+      <div class="control-label">CAMERA</div>
+      <div class="segmented" id="views"><button data-view="orbit" class="active">Orbit</button><button data-view="top">Overhead</button><button data-view="detail">Detail</button></div>
+      <div class="control-label">LIGHTING</div>
+      <div class="segmented" id="lighting"><button data-light="dusk" class="active">Sundown</button><button data-light="studio">Studio</button></div>
+      <div class="toggles"><button id="motion" aria-pressed="true">Ⅱ Pause motion</button><button id="wire" aria-pressed="false">◇ Wireframe</button></div>
+      <div class="toggles"><button id="quality" aria-pressed="true">LOD 1 · Battlefield</button><button id="pulse">✧ Pulse core</button></div>
+    </aside>
+  </main>
+  <footer class="interface"><span>DRAG TO ORBIT <b>·</b> SCROLL TO EXPLORE <b>·</b> H TO HIDE UI</span><span id="runtime">BLENDER → GLB → THREE.JS / WEBGL</span></footer>
+  <script type="module">
+    import('./main.js').catch(error => {
+      document.querySelector('#progress').textContent = 'Viewer could not start: ' + error.message;
+      console.error(error);
+    });
+  </script>
+</body>
+</html>

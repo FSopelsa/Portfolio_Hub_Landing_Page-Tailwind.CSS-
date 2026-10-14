@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Felix's personal projects: an AI-assisted 3D asset showcase and workflow, music libraries, web applications, and game experiments.">
+  <meta name="theme-color" content="#f4f3ec">
+  <title>Felix — Projects &amp; experiments</title>
+  <!-- shortcut: Play CDN keeps this workshop build-free; compile CSS before publishing. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-paper: #f4f3ec;
+      --color-ink: #24332b;
+      --color-muted: #58645c;
+      --color-line: #d5d9cc;
+      --color-accent: #d8e69b;
+    }
+    @layer base {
+      ::selection { background: #d8e69b; color: #24332b; }
+      :focus-visible { outline: 3px solid #5b7430; outline-offset: 5px; }
+      section[id] { scroll-margin-top: 2rem; }
+    }
+  </style>
+</head>
+<body class="bg-paper font-sans text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-accent focus:p-3">Skip to content</a>
+
+  <!-- Change your name and navigation links here. -->
+  <header class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 border-b border-line px-6 py-6 sm:px-10 lg:px-12">
+    <a href="#" aria-label="Felix, back to top" class="flex items-center gap-3">
+      <span class="flex size-10 items-center justify-center rounded-full bg-ink text-xl font-bold text-paper" aria-hidden="true">f.</span>
+      <span class="text-sm font-semibold tracking-tight">Felix <span class="font-normal text-muted">/ personal projects</span></span>
+    </a>
+    <nav aria-label="Main navigation" class="flex items-center gap-5 text-sm sm:gap-8">
+      <a href="#projects" class="underline-offset-4 hover:underline">Projects</a>
+      <a href="#workflow" class="underline-offset-4 hover:underline">Workflow</a>
+      <a href="#about" class="underline-offset-4 hover:underline">About</a>
+      <a href="https://github.com/FSopelsa" class="font-semibold underline-offset-4 hover:underline">GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section aria-labelledby="intro-title" class="mx-auto grid max-w-7xl gap-12 px-6 pt-14 pb-16 sm:px-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:px-12 lg:pt-20 lg:pb-20">
+      <div class="flex flex-col items-start justify-center">
+        <p class="mb-7 flex items-center gap-3 font-mono text-xs uppercase tracking-[.16em]"><span class="size-2 rounded-full bg-[#668844]" aria-hidden="true"></span>A collection of things I build</p>
+        <h1 id="intro-title" class="text-[clamp(3.25rem,6.6vw,6rem)] leading-[.98] font-semibold tracking-[-.065em]">Useful tools.<br>Imaginary<br><span class="font-serif font-normal italic tracking-[-.07em]">worlds.</span></h1>
+        <p class="mt-7 max-w-md text-base leading-7 text-muted sm:text-lg">I'm Felix. I build coding projects around the things that interest me: games, music, and making everyday tasks a little easier.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-6">
+          <a href="#projects" class="inline-flex items-center gap-6 rounded-full bg-ink px-6 py-3.5 text-sm font-medium text-paper transition-colors hover:bg-[#3b4c3d]">Explore my projects <span aria-hidden="true">↓</span></a>
+          <a href="#featured" class="text-sm underline decoration-line underline-offset-4 hover:decoration-ink">Start with the 3D project</a>
+        </div>
+      </div>
+
+      <a href="#featured" class="group relative block overflow-hidden rounded-[1.5rem] bg-[#2a261f]" aria-label="Read about the Sundown 3D asset workflow">
+        <img src="assets/cinder-foundry.png" width="2560" height="2160" alt="Two procedural 3D towers with orange and cyan glowing cores, accompanied by a supply cache and paving tile" fetchpriority="high" class="h-[440px] w-full object-cover object-center sm:h-[540px] lg:h-full lg:min-h-[580px]">
+        <div class="absolute inset-x-0 top-0 flex items-center justify-between gap-3 p-6 text-white">
+          <span class="rounded-full border border-white/30 bg-black/35 px-4 py-2 font-mono text-[10px] uppercase tracking-widest">01 / Featured project</span>
+          <span class="flex size-10 items-center justify-center rounded-full bg-accent text-xl text-ink transition-transform group-hover:rotate-45 motion-reduce:transition-none" aria-hidden="true">↗&#xfe0e;</span>
+        </div>
+        <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/85 to-transparent px-6 pt-20 pb-6 text-white">
+          <p class="mb-2 font-mono text-[10px] uppercase tracking-[.16em] text-white/75">Sundown at Cinder Junction</p>
+          <p class="text-2xl font-medium tracking-tight">Cinder Foundry</p>
+          <p class="mt-1 text-sm text-white/75">3D assets · An AI-assisted creative workflow</p>
+        </div>
+      </a>
+    </section>
+
+    <!-- The feature uses real renders and a concept reference, each clearly labelled. -->
+    <section id="featured" aria-labelledby="featured-title" class="bg-ink text-paper">
+      <div class="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
+        <div class="grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
+          <div>
+            <p class="mb-5 font-mono text-xs uppercase tracking-[.16em] text-accent">01 / Asset showcase</p>
+            <h2 id="featured-title" class="max-w-xl text-4xl leading-[1.08] font-medium tracking-[-.045em] sm:text-5xl">A visual idea.<br>A world you can build.</h2>
+          </div>
+          <div class="lg:pt-8">
+            <p class="text-lg leading-8 text-paper/80">Four assets made through an AI-assisted Blender workflow for my game, <em>Sundown at Cinder Junction</em>. Visual direction, procedural modeling, and browser integration come together in one small collection.</p>
+            <p class="mt-4 text-sm leading-6 text-paper/65">The main goal is to quickly turn just a photo or written description into a real 3D object that I can view, place, and test inside a game engine. This collection is a starting point for making that workflow repeatable and more efficient.</p>
+            <a href="showcase/viewer/" class="mt-7 inline-flex items-center gap-6 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-[#e9f2bd]">Explore the models in 3D <span aria-hidden="true">↗&#xfe0e;</span></a>
+            <p class="mt-3 text-xs text-paper/60">Interactive gallery · best on a desktop browser</p>
+          </div>
+        </div>
+
+        <div class="mt-12 grid gap-5 md:grid-cols-2">
+          <figure class="overflow-hidden rounded-xl border border-white/15">
+            <img src="assets/foundry-concept.png" width="1536" height="1024" alt="Generated visual concept for an orange fire tower and a smaller cyan support tower" loading="lazy" class="aspect-[3/2] w-full object-cover">
+            <figcaption class="flex items-center justify-between gap-4 p-5"><span class="text-sm">01 / Visual direction</span><span class="font-mono text-[10px] uppercase tracking-wider text-paper/60">Concept reference</span></figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-xl border border-white/15">
+            <video controls muted loop playsinline preload="none" poster="assets/cinder-foundry.png" aria-label="Eight-second turntable showing the exported Cinder Foundry 3D models" class="aspect-[3/2] w-full bg-[#25251e] object-contain">
+              <source src="assets/foundry-turntable.mp4" type="video/mp4">
+              <a href="assets/foundry-turntable.mp4">Watch the Cinder Foundry turntable</a>.
+            </video>
+            <figcaption class="flex items-center justify-between gap-4 p-5"><span class="text-sm">02 / Exported 3D models</span><span class="font-mono text-[10px] uppercase tracking-wider text-paper/60">GLB turntable · 8 sec</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="mt-10 grid gap-8 border-t border-white/20 pt-8 sm:grid-cols-3">
+          <div><p class="mb-3 font-mono text-xs text-accent">01 — Build</p><h3 class="text-lg font-medium">Procedural, editable assets</h3><p class="mt-2 text-sm leading-6 text-paper/65">Blender Python scripts define geometry and materials, keeping the source available for iteration.</p></div>
+          <div><p class="mb-3 font-mono text-xs text-accent">02 — Prepare</p><h3 class="text-lg font-medium">Detail where it matters</h3><p class="mt-2 text-sm leading-6 text-paper/65">Separate detail and battlefield models balance close inspection with the needs of a game scene.</p></div>
+          <div><p class="mb-3 font-mono text-xs text-accent">03 — Integrate</p><h3 class="text-lg font-medium">Assets with a purpose</h3><p class="mt-2 text-sm leading-6 text-paper/65">The Foundry models are used for towers, landmarks, supply drops, and fortification pads in Sundown.</p></div>
+        </div>
+
+        <details class="mt-8 border-t border-white/20 pt-6">
+          <summary class="w-fit cursor-pointer text-sm font-medium text-accent underline-offset-4 hover:underline">A closer look at the workflow</summary>
+          <div class="mt-6 grid gap-7 text-sm leading-7 text-paper/75 md:grid-cols-2">
+            <p>The scripts author meshes from visual references. This is a guided production workflow: an image establishes the direction, and code builds the shapes, materials, and exports. The concept above is a generated design reference; the video and gallery show the actual exported models.</p>
+            <div>
+              <p class="mb-3">Across the four Foundry assets, the detail models total <strong class="text-paper">88,060 triangles</strong>; the battlefield versions total <strong class="text-paper">32,751</strong>. Both can be inspected in the gallery, along with wireframes and animation.</p>
+              <a href="#workflow" class="text-accent underline underline-offset-4">See how the assets were made ↓</a>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="workflow" aria-labelledby="workflow-title" class="mx-auto max-w-7xl border-b border-line px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
+      <div class="grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
+        <div><p class="mb-4 font-mono text-xs uppercase tracking-[.16em] text-muted">The making of / Cinder Foundry</p><h2 id="workflow-title" class="text-4xl leading-[1.08] font-medium tracking-[-.045em] sm:text-5xl">From an instruction<br>to an asset.</h2></div>
+        <div><p class="text-lg leading-8 text-muted">The main purpose is to get a usable 3D object quickly from just a photo or description, so it can be viewed and tested inside a game engine. I'm developing a repeatable methodology around that journey, aiming to preserve quality while gradually using fewer tokens and costing less to run.</p><a href="WORKFLOW.md" class="mt-5 inline-block text-sm font-semibold underline decoration-line underline-offset-4 hover:decoration-ink">Read the complete workflow guide <span aria-hidden="true">↗&#xfe0e;</span></a></div>
+      </div>
+
+      <div class="mt-10 rounded-xl bg-[#efe8dc] p-6 sm:p-8">
+        <p class="mb-3 font-mono text-xs uppercase tracking-[.16em] text-muted">Where the methodology is heading</p>
+        <h3 class="text-2xl font-semibold tracking-tight">More quality from every iteration.</h3>
+        <div class="mt-6 grid gap-7 md:grid-cols-3">
+          <div><h4 class="text-sm font-semibold">Fewer tokens, reusable knowledge</h4><p class="mt-2 text-sm leading-7 text-muted">Keep successful recipes, concise instructions, and local validation so each asset needs less repeated explanation and fewer retries. Lower spending is a goal to measure against accepted results.</p></div>
+          <div><h4 class="text-sm font-semibold">A photo or description is enough to start</h4><p class="mt-2 text-sm leading-7 text-muted">The intended starting point is a single photo or short description. Optional measurements can improve accuracy; the workflow makes assumptions about scale and hidden surfaces visible.</p></div>
+          <div><h4 class="text-sm font-semibold">From screen to physical prop</h4><p class="mt-2 text-sm leading-7 text-muted">3D models can be prepared and exported for a slicer and 3D printer, creating physical props. A printable version needs appropriate scale, solid geometry, and sufficient thickness; these assets have not yet been checked for printing.</p></div>
+        </div>
+      </div>
+
+      <ol class="mt-10 grid gap-x-12 gap-y-8 md:grid-cols-2">
+        <li class="flex gap-5 border-t border-line pt-6"><span class="font-mono text-sm text-muted" aria-hidden="true">01</span><div><h3 class="text-lg font-semibold">Set the visual and technical brief</h3><p class="mt-2 text-sm leading-7 text-muted">Space-western machinery, readable silhouettes, orange and cyan energy cores, original decorative glyphs, and usable GLB exports. The brief also sets scale, pivots, materials, and animation needs.</p></div></li>
+        <li class="flex gap-5 border-t border-line pt-6"><span class="font-mono text-sm text-muted" aria-hidden="true">02</span><div><h3 class="text-lg font-semibold">Generate a concept reference</h3><p class="mt-2 text-sm leading-7 text-muted">The built-in ImageGen tool produced the visual direction. The saved prompt specifies the shapes, materials, lighting, and camera. This image guides the modeling stage.</p><a href="assets/concept-prompt.txt" class="mt-2 inline-block text-xs font-semibold underline underline-offset-4">Read the preserved image prompt</a></div></li>
+        <li class="flex gap-5 border-t border-line pt-6"><span class="font-mono text-sm text-muted" aria-hidden="true">03</span><div><h3 class="text-lg font-semibold">Build geometry with Blender Python</h3><p class="mt-2 text-sm leading-7 text-muted">Skill-guided authoring creates the shapes, procedural surfaces, and named moving parts in an editable Blender scene. The delivered scripts preserve this construction process.</p></div></li>
+        <li class="flex gap-5 border-t border-line pt-6"><span class="font-mono text-sm text-muted" aria-hidden="true">04</span><div><h3 class="text-lg font-semibold">Bake, export, and optimize</h3><p class="mt-2 text-sm leading-7 text-muted">Bake PBR material maps, export GLB, prepare smaller battlefield versions, remove redundant geometry, and rebuild tangents. Idle and activation clips stay with the assets.</p></div></li>
+        <li class="flex gap-5 border-t border-line pt-6"><span class="font-mono text-sm text-muted" aria-hidden="true">05</span><div><h3 class="text-lg font-semibold">Inspect the actual exports</h3><p class="mt-2 text-sm leading-7 text-muted">The saved validation reports check the GLB files; renders and the Three.js gallery show those same exported models. That makes the real output visible alongside the concept.</p></div></li>
+        <li class="flex gap-5 border-t border-line pt-6"><span class="font-mono text-sm text-muted" aria-hidden="true">06</span><div><h3 class="text-lg font-semibold">Bring the assets into Sundown</h3><p class="mt-2 text-sm leading-7 text-muted">Prepare the models at game scale, register their paths, and connect visual animation to game events. The game simulation keeps ownership of damage, movement, and objectives.</p></div></li>
+      </ol>
+
+      <div class="mt-10 rounded-xl bg-[#e9edde] p-6 sm:p-8">
+        <h3 class="text-lg font-semibold">Skills and tools recorded for this collection</h3>
+        <p class="mt-2 max-w-3xl text-sm leading-7 text-muted">Discovery and pipeline guidance: <code>find-skills</code>, <code>imagegen</code>, and <code>web-3d-asset-pipeline</code>. The browser asset pipeline skill covers getting assets into a Three.js workflow. The saved skill lock records four Blender skills from <a href="https://github.com/RobLe3/cc-blender-skill" class="underline underline-offset-4">RobLe3/cc-blender-skill</a>.</p>
+        <div class="mt-5 flex flex-wrap gap-2 font-mono text-xs"><span class="rounded-full border border-ink/20 px-3 py-2">blender-modeling</span><span class="rounded-full border border-ink/20 px-3 py-2">blender-materials</span><span class="rounded-full border border-ink/20 px-3 py-2">blender-lighting</span><span class="rounded-full border border-ink/20 px-3 py-2">blender-export</span></div>
+        <p class="mt-5 text-sm leading-7 text-muted"><strong class="text-ink">Three.js runtime guidance:</strong> <code>three-webgl-game</code> was also read during earlier Sundown development. It guides scenes, cameras, render loops, GLB loading, and keeping game rules outside the render objects. Its use is confirmed in the broader game work; the Foundry pack records <code>web-3d-asset-pipeline</code> for the asset workflow.</p>
+        <p class="mt-5 text-sm leading-7 text-muted">Execution: Blender 4.5.3 LTS, Python, glTF Transform, MikkTSpace, Khronos glTF Validator, and Three.js. The saved notes say Tripo and Gemini workflows were inspected; the final meshes were authored locally in Blender.</p>
+        <p class="mt-3 text-xs leading-6 text-muted">The exact authoring LLM/model and complete conversation were not recorded in the pack. The image prompt is preserved; the repeatable authoring instructions below are a reconstruction.</p>
+      </div>
+
+      <details class="mt-8 border-t border-line pt-6">
+        <summary class="w-fit cursor-pointer text-sm font-semibold underline-offset-4 hover:underline">Instructions for repeating the workflow</summary>
+        <p class="mt-5 mb-4 text-sm leading-7 text-muted">A suggested brief based on the delivered files. This is a reusable reconstruction of the process, rather than the original conversation.</p>
+        <pre class="overflow-x-auto rounded-xl bg-ink p-6 text-sm leading-7 whitespace-pre-wrap text-paper"><code>Create four original 3D game assets for Sundown at Cinder Junction:
+an elemental defense tower, a support tower, a supply cache,
+and a modular paving tile.
+
+First generate a clearly labelled concept reference. Use original
+designs, warm ceramic/copper/iron materials, distinct orange and
+cyan energy cores, and silhouettes readable from above.
+
+Read the modeling, materials, lighting, and export skills.
+Build the assets with reproducible Blender Python scripts.
+Deliver editable Blender scenes and self-contained GLBs with
+ground-centered origins, named parts, PBR textures, attachment
+sockets, and Idle plus Fire/Pulse animation where appropriate.
+
+Provide detailed and battlefield versions of the towers.
+Validate the final GLBs and report measured triangle counts.
+Render the exported models, build a browser preview, and record
+the actual tools, sources, limitations, and instructions used.</code></pre>
+        <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold"><a href="assets/skill-lock.json" class="underline underline-offset-4">Saved skill lock</a><a href="assets/asset-notes.md" class="underline underline-offset-4">Production provenance</a><a href="assets/technical.md" class="underline underline-offset-4">Original rebuild instructions</a></div>
+      </details>
+
+      <details class="mt-8 border-t border-line pt-6">
+        <summary class="w-fit cursor-pointer text-sm font-semibold underline-offset-4 hover:underline">A possible next step: Cinder Workshop</summary>
+        <div class="mt-5 grid gap-7 md:grid-cols-2">
+          <div><h3 class="text-lg font-semibold">A personal photo-to-game-asset workbench</h3><p class="mt-2 text-sm leading-7 text-muted">An app that quickly takes a photo or description to an actual 3D object for engine testing, keeping its brief, recipe, versions, checks, and token spending together. My own design vocabulary and a separate physical-prop export path would make the workflow distinctive.</p></div>
+          <div><h3 class="text-lg font-semibold">Start with a single asset journey</h3><p class="mt-2 text-sm leading-7 text-muted">First organize and preview an existing asset with its production record. Then add recipe controls, a Blender build action, and separate game and print exports. This is a proposed app direction; the current page showcases the existing work.</p></div>
+        </div>
+      </details>
+    </section>
+
+    <!-- Add or replace an entire article to change the project selection. -->
+    <section id="projects" aria-labelledby="projects-title" class="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
+      <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
+        <div><p class="mb-4 font-mono text-xs uppercase tracking-[.16em] text-muted">02 / Selected work</p><h2 id="projects-title" class="text-4xl font-medium tracking-[-.045em] sm:text-5xl">Different problems.<br>The same curiosity.</h2></div>
+        <a href="https://github.com/FSopelsa?tab=repositories" class="text-sm underline decoration-line underline-offset-4 hover:decoration-ink">All repositories <span aria-hidden="true">↗&#xfe0e;</span></a>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2">
+        <article class="flex flex-col rounded-xl border border-line bg-[#e9edde] p-7 sm:p-9">
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Music / personal tool</span><span class="font-mono text-xs text-muted">01</span></div>
+          <p class="mb-6 flex flex-wrap items-center gap-3 font-serif text-2xl italic text-[#56703b]" aria-label="Artist to album to track"><span>Artist</span><span aria-hidden="true">→</span><span>Album</span><span aria-hidden="true">→</span><span>Track</span></p>
+          <h3 class="text-2xl font-semibold tracking-tight">Artists <span class="text-base font-normal text-muted">/ Orgnsort</span></h3>
+          <p class="mt-3 text-sm leading-7 text-muted">A Spicetify app that turns saved albums and liked songs into an expandable artist library. Open an album to load its tracks, then play it in its original album context.</p>
+          <p class="mt-4 text-sm leading-6"><span class="font-semibold">What to explore:</span> lazy loading, library grouping, and cached data.</p>
+          <div class="mt-7 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-ink/15 px-3 py-1">TypeScript</span><span class="rounded-full border border-ink/15 px-3 py-1">React</span><span class="rounded-full border border-ink/15 px-3 py-1">Spicetify</span></div>
+          <a href="https://github.com/FSopelsa/orgnsort" class="mt-7 flex items-center justify-between border-t border-ink/15 pt-5 text-sm font-semibold underline-offset-4 hover:underline">Explore Artists on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
+        </article>
+
+        <article class="flex flex-col rounded-xl border border-line bg-[#efe8dc] p-7 sm:p-9">
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Web / application</span><span class="font-mono text-xs text-muted">02</span></div>
+          <p class="mb-6 font-serif text-2xl italic text-[#856541]">Choose. Reserve. Drive.</p>
+          <h3 class="text-2xl font-semibold tracking-tight">Car Rental</h3>
+          <p class="mt-3 text-sm leading-7 text-muted">A rental application connecting a React interface to a Spring backend and PostgreSQL. Booking logic validates dates and checks for overlapping rentals before saving a reservation.</p>
+          <p class="mt-4 text-sm leading-6"><span class="font-semibold">What to explore:</span> the interface, API, and booking rules.</p>
+          <div class="mt-7 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-ink/15 px-3 py-1">Java / Spring</span><span class="rounded-full border border-ink/15 px-3 py-1">React</span><span class="rounded-full border border-ink/15 px-3 py-1">PostgreSQL</span></div>
+          <a href="https://github.com/FSopelsa/Car-Rental" class="mt-7 flex items-center justify-between border-t border-ink/15 pt-5 text-sm font-semibold underline-offset-4 hover:underline">Explore Car Rental on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
+        </article>
+
+        <article class="flex flex-col rounded-xl border border-line bg-[#e4e9ed] p-7 sm:p-9">
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Web / game</span><span class="font-mono text-xs text-muted">03</span></div>
+          <p class="mb-6 font-serif text-2xl italic text-[#496578]">One quiz. A shared challenge.</p>
+          <h3 class="text-2xl font-semibold tracking-tight">NodeQuiz</h3>
+          <p class="mt-3 text-sm leading-7 text-muted">A quiz app with a Vue interface and an Express backend. Create a quiz, share its game code, and store participants' answers and scores in MongoDB.</p>
+          <p class="mt-4 text-sm leading-6"><span class="font-semibold">What to explore:</span> game sessions and the question-to-results flow.</p>
+          <div class="mt-7 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-ink/15 px-3 py-1">Vue</span><span class="rounded-full border border-ink/15 px-3 py-1">Node / Express</span><span class="rounded-full border border-ink/15 px-3 py-1">MongoDB</span></div>
+          <a href="https://github.com/FSopelsa/NodeQuiz" class="mt-7 flex items-center justify-between border-t border-ink/15 pt-5 text-sm font-semibold underline-offset-4 hover:underline">Explore NodeQuiz on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
+        </article>
+
+        <article class="flex flex-col rounded-xl border border-line bg-[#ece8ee] p-7 sm:p-9">
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Game / addon prototype</span><span class="font-mono text-xs text-muted">04</span></div>
+          <p class="mb-6 font-mono text-xl text-[#74647e]">/tdata search</p>
+          <h3 class="text-2xl font-semibold tracking-tight">TurtleData</h3>
+          <p class="mt-3 text-sm leading-7 text-muted">A Lua addon experiment with slash commands, a search-window scaffold, and tooltip hooks that display item IDs. Database search is still a planned feature.</p>
+          <p class="mt-4 text-sm leading-6"><span class="font-semibold">What to explore:</span> command handling, game events, and tooltip integration.</p>
+          <div class="mt-7 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-ink/15 px-3 py-1">Lua</span><span class="rounded-full border border-ink/15 px-3 py-1">WoW addon</span><span class="rounded-full border border-ink/15 px-3 py-1">Prototype</span></div>
+          <a href="https://github.com/FSopelsa/TurtleData" class="mt-7 flex items-center justify-between border-t border-ink/15 pt-5 text-sm font-semibold underline-offset-4 hover:underline">Explore TurtleData on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
+        </article>
+
+        <article class="flex flex-col rounded-xl border border-line bg-[#e9edde] p-7 sm:p-9">
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Desktop / game prototype</span><span class="font-mono text-xs text-muted">05</span></div>
+          <p class="mb-6 font-serif text-2xl italic text-[#56703b]">Explore. Battle. Catch.</p>
+          <h3 class="text-2xl font-semibold tracking-tight">Poklone</h3>
+          <p class="mt-3 text-sm leading-7 text-muted">An original creature-battling game built in Java. Explore a tile-based practice room, encounter a creature, then battle or catch it with a small party. Swing and terminal interfaces share the same game rules.</p>
+          <p class="mt-4 text-sm leading-6"><span class="font-semibold">What to explore:</span> object-oriented battle rules, party state, and exploration-to-battle transitions.</p>
+          <div class="mt-7 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-ink/15 px-3 py-1">Java</span><span class="rounded-full border border-ink/15 px-3 py-1">Swing</span><span class="rounded-full border border-ink/15 px-3 py-1">OOP</span></div>
+          <a href="https://github.com/FSopelsa/Poklone" class="mt-7 flex items-center justify-between border-t border-ink/15 pt-5 text-sm font-semibold underline-offset-4 hover:underline">Explore Poklone on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
+        </article>
+
+        <article class="flex flex-col rounded-xl border border-line bg-[#e4e9ed] p-7 sm:p-9">
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Browser / OOP experiment</span><span class="font-mono text-xs text-muted">06</span></div>
+          <p class="mb-6 font-serif text-2xl italic text-[#496578]">Roll the dice. Watch the clock.</p>
+          <h3 class="text-2xl font-semibold tracking-tight">Dice &amp; Clock</h3>
+          <p class="mt-3 text-sm leading-7 text-muted">A JavaScript experiment with separate, draggable dice and clock windows. Add, remove, and roll dice with a points counter, or open a digital clock that updates every second.</p>
+          <p class="mt-4 text-sm leading-6"><span class="font-semibold">What to explore:</span> prototype-based objects, DOM-built interfaces, events, and timers.</p>
+          <div class="mt-7 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-ink/15 px-3 py-1">JavaScript</span><span class="rounded-full border border-ink/15 px-3 py-1">OOP</span><span class="rounded-full border border-ink/15 px-3 py-1">DOM</span></div>
+          <a href="https://github.com/FSopelsa/Dice-Clock-OOP" class="mt-7 flex items-center justify-between border-t border-ink/15 pt-5 text-sm font-semibold underline-offset-4 hover:underline">Explore Dice-Clock-OOP on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
+        </article>
+
+        <article class="flex flex-col rounded-xl border border-line bg-[#efe8dc] p-7 sm:p-9 md:col-span-2">
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Browser / puzzle game</span><span class="font-mono text-xs text-muted">07</span></div>
+          <p class="mb-6 font-serif text-2xl italic text-[#856541]">Arrange. Compare. Score.</p>
+          <h3 class="text-2xl font-semibold tracking-tight">Ett litet spel</h3>
+          <p class="mt-3 max-w-3xl text-sm leading-7 text-muted">A number-placement puzzle on a 4 × 4 board. Drag randomly drawn tiles into place and try to form increasing sequences across rows and columns. Total points and the number of games are stored locally in the browser.</p>
+          <p class="mt-4 text-sm leading-6"><span class="font-semibold">What to explore:</span> drag-and-drop interaction, sequence scoring, and local storage.</p>
+          <div class="mt-7 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-ink/15 px-3 py-1">JavaScript</span><span class="rounded-full border border-ink/15 px-3 py-1">HTML / CSS</span><span class="rounded-full border border-ink/15 px-3 py-1">localStorage</span></div>
+          <a href="https://github.com/FSopelsa/Ett-litet-spel" class="mt-7 flex items-center justify-between border-t border-ink/15 pt-5 text-sm font-semibold underline-offset-4 hover:underline">Explore Ett-litet-spel on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title" class="mx-auto grid max-w-7xl gap-8 border-t border-line px-6 py-16 sm:px-10 lg:grid-cols-2 lg:px-12">
+      <div><p class="mb-4 font-mono text-xs uppercase tracking-[.16em] text-muted">03 / The person behind the projects</p><h2 id="about-title" class="text-4xl font-medium tracking-[-.045em]">Learning by making.</h2></div>
+      <div class="max-w-lg"><p class="text-lg leading-8 text-muted">I like projects with something tangible at the end: a tool I can use, a game I can play, or an idea I can see in 3D. This is a small selection of those experiments and the code behind them.</p><p class="mt-5 text-sm leading-7 text-muted">My work spans Java, JavaScript, TypeScript, Python, and Lua. Each project gives me a different problem to work through.</p><a href="https://github.com/FSopelsa" class="mt-7 inline-flex items-center gap-8 rounded-full bg-ink px-6 py-3.5 text-sm font-medium text-paper transition-colors hover:bg-[#3b4c3d]">Find me on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a></div>
+    </section>
+  </main>
+
+  <footer class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-line px-6 py-6 text-xs text-muted sm:px-10 lg:px-12"><p>Felix / Projects &amp; experiments</p><a href="#" class="underline-offset-4 hover:underline">Back to the top ↑</a></footer>
+</body>
+</html>
