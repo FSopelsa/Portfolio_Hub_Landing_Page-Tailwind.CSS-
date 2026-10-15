@@ -123,6 +123,8 @@ The saved QA record is dated **29 September 2026**. It records validation of all
 
 The stills and turntable were rendered by importing the final GLBs. The Three.js gallery uses those exports and the supplied integration helper. This is why the portfolio shows three different kinds of evidence with distinct labels: concept reference, exported model video, and interactive runtime gallery.
 
+For portfolio delivery on 15 October 2026, the page images were resized and converted to WebP, and the GLBs' embedded textures were converted to lossless WebP at their original resolutions. The mesh and animation data, hierarchy, sockets, and decoded texture pixels were checked against the original delivery; all six optimized GLBs passed validation with zero errors and warnings. The [delivery report](assets/optimization-report.json) records sizes and results. The historical production records below continue to describe the original pack.
+
 Suggested LLM instruction — **reconstructed**:
 
 ```text

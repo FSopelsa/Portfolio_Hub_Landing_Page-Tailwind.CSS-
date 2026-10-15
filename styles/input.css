@@ -1,0 +1,16 @@
+@import "tailwindcss" source(none);
+@source "../index.html";
+
+@theme {
+  --color-paper: #f4f3ec;
+  --color-ink: #24332b;
+  --color-muted: #58645c;
+  --color-line: #d5d9cc;
+  --color-accent: #d8e69b;
+}
+
+@layer base {
+  ::selection { background: #d8e69b; color: #24332b; }
+  :focus-visible { outline: 3px solid #5b7430; outline-offset: 5px; }
+  section[id] { scroll-margin-top: 2rem; }
+}

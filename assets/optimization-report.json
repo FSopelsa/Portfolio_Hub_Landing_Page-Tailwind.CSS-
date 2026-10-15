@@ -1,0 +1,316 @@
+{
+  "images": [
+    {
+      "source": "renders/01-cinder-foundry.png",
+      "beforeBytes": 5751907,
+      "variants": [
+        {
+          "file": "assets/cinder-foundry.webp",
+          "bytes": 130928,
+          "width": 1600,
+          "height": 1350
+        },
+        {
+          "file": "assets/cinder-foundry-800.webp",
+          "bytes": 48950,
+          "width": 800,
+          "height": 675
+        }
+      ]
+    },
+    {
+      "source": "concept/foundry-sanctuary-concept.png",
+      "beforeBytes": 2281029,
+      "variants": [
+        {
+          "file": "assets/foundry-concept.webp",
+          "bytes": 143420,
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "file": "assets/foundry-concept-768.webp",
+          "bytes": 59912,
+          "width": 768,
+          "height": 512
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "file": "ember-reliquary-lod1.glb",
+      "beforeBytes": 4313308,
+      "afterBytes": 3426692,
+      "triangles": 19676,
+      "animations": [
+        "Idle",
+        "Fire"
+      ],
+      "textures": [
+        {
+          "name": "ember-reliquary-normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "ember-reliquary-basecolor",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "ember-reliquary-orm",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "ember-reliquary-molten-emission",
+          "size": [
+            512,
+            512
+          ],
+          "mimeType": "image/webp"
+        }
+      ],
+      "validation": {
+        "numErrors": 0,
+        "numWarnings": 0,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [],
+        "truncated": false
+      }
+    },
+    {
+      "file": "ember-reliquary.glb",
+      "beforeBytes": 9863900,
+      "afterBytes": 7090276,
+      "triangles": 56362,
+      "animations": [
+        "Idle",
+        "Fire"
+      ],
+      "textures": [
+        {
+          "name": "ember-reliquary-normal",
+          "size": [
+            2048,
+            2048
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "ember-reliquary-basecolor",
+          "size": [
+            2048,
+            2048
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "ember-reliquary-orm",
+          "size": [
+            2048,
+            2048
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "ember-reliquary-molten-emission",
+          "size": [
+            512,
+            512
+          ],
+          "mimeType": "image/webp"
+        }
+      ],
+      "validation": {
+        "numErrors": 0,
+        "numWarnings": 0,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [],
+        "truncated": false
+      }
+    },
+    {
+      "file": "frontier-cell-cache.glb",
+      "beforeBytes": 3541988,
+      "afterBytes": 2264348,
+      "triangles": 2664,
+      "animations": [],
+      "textures": [
+        {
+          "name": "frontier-cell-cache-normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "frontier-cell-cache-basecolor",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "frontier-cell-cache-orm",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        }
+      ],
+      "validation": {
+        "numErrors": 0,
+        "numWarnings": 0,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [],
+        "truncated": false
+      }
+    },
+    {
+      "file": "junction-paving.glb",
+      "beforeBytes": 2782032,
+      "afterBytes": 1738312,
+      "triangles": 1168,
+      "animations": [],
+      "textures": [
+        {
+          "name": "junction-paving-normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "junction-paving-basecolor",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "junction-paving-orm",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        }
+      ],
+      "validation": {
+        "numErrors": 0,
+        "numWarnings": 0,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [],
+        "truncated": false
+      }
+    },
+    {
+      "file": "wayfarer-condenser-lod1.glb",
+      "beforeBytes": 1743176,
+      "afterBytes": 1468204,
+      "triangles": 9243,
+      "animations": [
+        "Idle",
+        "Pulse"
+      ],
+      "textures": [
+        {
+          "name": "wayfarer-condenser-normal",
+          "size": [
+            512,
+            512
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "wayfarer-condenser-basecolor",
+          "size": [
+            512,
+            512
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "wayfarer-condenser-orm",
+          "size": [
+            512,
+            512
+          ],
+          "mimeType": "image/webp"
+        }
+      ],
+      "validation": {
+        "numErrors": 0,
+        "numWarnings": 0,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [],
+        "truncated": false
+      }
+    },
+    {
+      "file": "wayfarer-condenser.glb",
+      "beforeBytes": 4166468,
+      "afterBytes": 3204016,
+      "triangles": 27866,
+      "animations": [
+        "Idle",
+        "Pulse"
+      ],
+      "textures": [
+        {
+          "name": "wayfarer-condenser-normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "wayfarer-condenser-basecolor",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        },
+        {
+          "name": "wayfarer-condenser-orm",
+          "size": [
+            1024,
+            1024
+          ],
+          "mimeType": "image/webp"
+        }
+      ],
+      "validation": {
+        "numErrors": 0,
+        "numWarnings": 0,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [],
+        "truncated": false
+      }
+    }
+  ]
+}

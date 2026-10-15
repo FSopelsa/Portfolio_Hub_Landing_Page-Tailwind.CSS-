@@ -15,3 +15,9 @@ The four meshes, custom glyph forms, procedural surface recipes and transform an
 - The Tripo and Gemini workflow skills were inspected. Final meshes were made locally in Blender; no Tripo or Gemini generation was used.
 
 The franchises named in the brief informed the art direction. This pack contains no franchise logos or extracted franchise assets.
+
+## Portfolio delivery optimization — 15 October 2026
+
+This portfolio serves resized WebP versions of the two page images, including smaller responsive variants. Its six GLBs retain the original mesh and animation data and texture resolution, with embedded PNG textures replaced by lossless WebP. Decoded texture pixels were compared against the original delivery, and all six optimized GLBs passed validation with zero errors and warnings.
+
+The page images total 383,210 bytes across all four variants (original PNGs: 8,032,936 bytes). The GLBs total 19,191,848 bytes (originals: 26,410,872 bytes). The original source pack is preserved separately. See [optimization-report.json](optimization-report.json) for per-file results and the portfolio's `scripts/optimize-assets.mjs` for the repeatable conversion and checks. The existing Three.js gallery supports the `EXT_texture_webp` extension without an additional decoder.

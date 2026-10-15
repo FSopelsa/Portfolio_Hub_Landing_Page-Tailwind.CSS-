@@ -6,22 +6,7 @@
   <meta name="description" content="Felix's personal projects: an AI-assisted 3D asset showcase and workflow, music libraries, web applications, and game experiments.">
   <meta name="theme-color" content="#f4f3ec">
   <title>Felix — Projects &amp; experiments</title>
-  <!-- shortcut: Play CDN keeps this workshop build-free; compile CSS before publishing. -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --color-paper: #f4f3ec;
-      --color-ink: #24332b;
-      --color-muted: #58645c;
-      --color-line: #d5d9cc;
-      --color-accent: #d8e69b;
-    }
-    @layer base {
-      ::selection { background: #d8e69b; color: #24332b; }
-      :focus-visible { outline: 3px solid #5b7430; outline-offset: 5px; }
-      section[id] { scroll-margin-top: 2rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="bg-paper font-sans text-ink antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-accent focus:p-3">Skip to content</a>
@@ -53,7 +38,7 @@
       </div>
 
       <a href="#featured" class="group relative block overflow-hidden rounded-[1.5rem] bg-[#2a261f]" aria-label="Read about the Sundown 3D asset workflow">
-        <img src="assets/cinder-foundry.png" width="2560" height="2160" alt="Two procedural 3D towers with orange and cyan glowing cores, accompanied by a supply cache and paving tile" fetchpriority="high" class="h-[440px] w-full object-cover object-center sm:h-[540px] lg:h-full lg:min-h-[580px]">
+        <img src="assets/cinder-foundry.webp" srcset="assets/cinder-foundry-800.webp 800w, assets/cinder-foundry.webp 1600w" sizes="(min-width: 1280px) 550px, (min-width: 1024px) 45vw, calc(100vw - 48px)" width="1600" height="1350" alt="Two procedural 3D towers with orange and cyan glowing cores, accompanied by a supply cache and paving tile" fetchpriority="high" class="h-[440px] w-full object-cover object-center sm:h-[540px] lg:h-full lg:min-h-[580px]">
         <div class="absolute inset-x-0 top-0 flex items-center justify-between gap-3 p-6 text-white">
           <span class="rounded-full border border-white/30 bg-black/35 px-4 py-2 font-mono text-[10px] uppercase tracking-widest">01 / Featured project</span>
           <span class="flex size-10 items-center justify-center rounded-full bg-accent text-xl text-ink transition-transform group-hover:rotate-45 motion-reduce:transition-none" aria-hidden="true">↗&#xfe0e;</span>
@@ -84,11 +69,11 @@
 
         <div class="mt-12 grid gap-5 md:grid-cols-2">
           <figure class="overflow-hidden rounded-xl border border-white/15">
-            <img src="assets/foundry-concept.png" width="1536" height="1024" alt="Generated visual concept for an orange fire tower and a smaller cyan support tower" loading="lazy" class="aspect-[3/2] w-full object-cover">
+            <img src="assets/foundry-concept.webp" srcset="assets/foundry-concept-768.webp 768w, assets/foundry-concept.webp 1280w" sizes="(min-width: 1280px) 540px, (min-width: 768px) 45vw, calc(100vw - 80px)" width="1280" height="853" alt="Generated visual concept for an orange fire tower and a smaller cyan support tower" loading="lazy" class="aspect-[3/2] w-full object-cover">
             <figcaption class="flex items-center justify-between gap-4 p-5"><span class="text-sm">01 / Visual direction</span><span class="font-mono text-[10px] uppercase tracking-wider text-paper/60">Concept reference</span></figcaption>
           </figure>
           <figure class="overflow-hidden rounded-xl border border-white/15">
-            <video controls muted loop playsinline preload="none" poster="assets/cinder-foundry.png" aria-label="Eight-second turntable showing the exported Cinder Foundry 3D models" class="aspect-[3/2] w-full bg-[#25251e] object-contain">
+            <video controls muted loop playsinline preload="none" poster="assets/cinder-foundry.webp" aria-label="Eight-second turntable showing the exported Cinder Foundry 3D models" class="aspect-[3/2] w-full bg-[#25251e] object-contain">
               <source src="assets/foundry-turntable.mp4" type="video/mp4">
               <a href="assets/foundry-turntable.mp4">Watch the Cinder Foundry turntable</a>.
             </video>
