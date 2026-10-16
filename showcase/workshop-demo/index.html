@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171d19">
+  <meta name="description" content="Try the Cinder Tower recipe in your browser. Make two GLB builds and download them for your game project.">
+  <title>Cinder Workshop — Browser trial</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"../viewer/vendor/three.module.js","three/addons/":"../viewer/vendor/addons/"}}</script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="back" href="../../#cinder-workshop">← Portfolio</a>
+    <span class="mark" aria-hidden="true">⟡</span>
+    <span class="brand">CINDER WORKSHOP <small>BROWSER TRIAL</small></span>
+    <span class="build-limit" id="build-limit">2 builds available</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">A small procedural build / runs in your browser</p>
+      <h1>Shape a tower.<br><em>Keep the model.</em></h1>
+      <p>Adjust the trusted Cinder Tower controls, inspect the result in 3D, and download a game-ready GLB. This lightweight trial uses a simplified browser version of the recipe.</p>
+    </section>
+
+    <div class="workbench">
+      <section class="panel controls-panel" aria-labelledby="controls-heading">
+        <div class="panel-heading"><span class="step">01 / RECIPE</span><span class="unit">METRES</span></div>
+        <h2 id="controls-heading">Set the shape</h2>
+        <form id="generator">
+          <div class="field">
+            <div class="range-label"><label for="height">Height</label><output id="height-value" for="height">4.0 m</output></div>
+            <input id="height" type="range" min="1" max="8" step="0.1" value="4">
+          </div>
+          <div class="field">
+            <div class="range-label"><label for="radius">Base radius</label><output id="radius-value" for="radius">1.10 m</output></div>
+            <input id="radius" type="range" min="0.4" max="2" step="0.05" value="1.1">
+          </div>
+          <div class="field split">
+            <div><label for="fins">Fins</label><select id="fins"><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option></select></div>
+            <div><label for="palette">Palette</label><select id="palette"><option value="ember">Ember / copper</option><option value="teal">Teal / copper</option></select></div>
+          </div>
+          <div class="field">
+            <div class="range-label"><label for="core">Core size</label><output id="core-value" for="core">70%</output></div>
+            <input id="core" type="range" min="0.3" max="1" step="0.05" value="0.7">
+          </div>
+          <div class="field photo-field">
+            <label for="reference">Optional photo reference <span>stays on this device</span></label>
+            <input id="reference" type="file" accept="image/*">
+            <img id="reference-preview" alt="Your local reference photo" hidden>
+            <p class="hint">A photo is for your comparison only. This trial does not read it or send it anywhere.</p>
+          </div>
+          <button id="build" class="primary" type="submit">Build this version <span aria-hidden="true">↗</span></button>
+          <p class="usage" id="usage">2 of 2 browser builds left</p>
+        </form>
+        <p class="fine-print">No account. No model calls. The geometry controls make the mesh. Your build count is saved in this browser; clearing this site's data resets it.</p>
+      </section>
+
+      <section class="panel preview-panel" aria-labelledby="preview-heading">
+        <div class="panel-heading"><span class="step">02 / INSPECT</span><span class="unit">Y-UP · METRES</span></div>
+        <div class="preview-heading"><h2 id="preview-heading">A real model, in the round.</h2><span id="model-badge" class="badge">READY</span></div>
+        <div class="viewport">
+          <canvas id="scene" aria-label="Generated Cinder Tower model. Drag to orbit and scroll to zoom."></canvas>
+          <div id="empty-preview" class="empty-preview"><span>⟐</span><h3>Start with the controls.</h3><p>Your generated object appears here.</p></div>
+          <div class="scale-label">GRID 1 M <b>·</b> DRAG TO ORBIT</div>
+        </div>
+        <div class="preview-actions"><p id="status" role="status" aria-live="polite">Choose a few parameters, then build.</p><a id="download" class="download" hidden>Download GLB <span aria-hidden="true">↓</span></a></div>
+        <p id="stats" class="stats">One procedural tower · no textures · ready for review</p>
+      </section>
+    </div>
+
+    <section class="limits" aria-labelledby="limits-heading">
+      <p class="eyebrow">What this trial includes</p>
+      <h2 id="limits-heading">A quick taste of the workflow.</h2>
+      <div class="limit-grid">
+        <article><span>01</span><h3>Two builds</h3><p>The limit is stored in this browser. It is a small demo allowance, not an account-based quota.</p></article>
+        <article><span>02</span><h3>Downloadable GLB</h3><p>Each build is a self-contained 3D file you can inspect or try in a game engine.</p></article>
+        <article><span>03</span><h3>Full Blender workflow</h3><p>Want saved projects, Blender source, logs, checks, and version review? Download the local Workshop and run it with Blender.</p></article>
+      </div>
+      <a class="local-link" href="../../WORKFLOW.md#cinder-workshop-full-local-workflow">Read the full local Blender instructions <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer><a href="../../#cinder-workshop">← Back to the portfolio</a><span>CINDER TOWER / BROWSER RECIPE V1</span></footer>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

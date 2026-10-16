@@ -188,21 +188,43 @@ Three.js also provides an [STLExporter](https://threejs.org/docs/#STLExporter), 
 
 No printable export, mesh repair, slicer review, or physical print was performed for this portfolio update. Print preparation is an additional output path for the methodology.
 
-## Making the workflow a personal app
+## Cinder Workshop: browser trial and full local workflow
 
-**Cinder Workshop** is a working-name proposal for a personal asset workbench. Its primary job would be to quickly turn a photo or description into a real 3D object that can be viewed and tested in a game engine, while keeping the brief, recipe, outputs, and production evidence together.
+### Browser trial
 
-Distinctive features worth building in order:
+Open the [two-build browser demo](showcase/workshop-demo/). It runs a simplified Cinder Tower recipe in the visitor's browser, previews the generated mesh, and downloads a self-contained GLB for game-engine use. It needs no account, Blender install, or running home service. The two-build limit is stored in browser storage; clearing site data resets it. Builds are temporary and stay on the visitor's device.
 
-1. **An asset project record:** photo/sketch, known dimensions, brief, chosen recipe, GLB preview, version notes, source files, and validation results. Start by importing existing assets; this is useful before automating new generation.
-2. **A personal recipe library:** parameterized fins, bases, energy cores, fittings, glyphs, and material palettes. Store successful proportions and construction methods. An LLM can propose bounded recipe parameters or a targeted patch while deterministic scripts handle repeated construction.
-3. **One local build action:** run the selected Blender recipe, capture logs, and replace the preview only after a successful export. Keep prior working versions available.
-4. **Game and print output profiles:** game export focuses on LODs, materials, pivots, and animation; print export focuses on physical dimensions, connected parts, thickness, and printable geometry. Share design intent while preparing each output for its actual use.
-5. **A token and quality record:** record usage per stage, model, retries, accepted/rejected result, and billable cost when available. Compare **tokens and cost per accepted asset**, plus quality against a fixed visual/technical rubric. Timing alone is not a cost estimate.
+This is a lightweight browser port of the manual tower controls. It does not call an image model, interpret a photo or written description, save projects to a server, or create Blender source. A selected photo stays in the browser and is reference only. Browser output is a useful game-mesh draft, not a byte-identical Blender export.
 
-The best first app slice is one asset family—such as a tower or a small prop—with import, brief, recipe controls, preview, saved versions, and a build/export action. General arbitrary-photo reconstruction, multiple generation providers, accounts, and a marketplace can wait until that journey is reliable.
+### Full local workflow
 
-This app direction is a proposal. The portfolio currently presents the existing collection and documented production method.
+[Download the full local Workshop](assets/cinder-workshop-local.zip) if you want editable Blender source, saved projects, build logs, checks, and version review. It runs on your computer only; it does not expose a server to the internet.
+
+Requirements: Windows, Node.js 22 or newer, and Blender. After extracting the download:
+
+```powershell
+npm.cmd start
+```
+
+Run that command in the extracted `Cinder Workshop` folder. Then open <http://127.0.0.1:8787/>. Stop it with `Ctrl+C`. If Blender is installed outside `C:\Program Files\Blender Foundation`, set `BLENDER_PATH` to `blender.exe` before starting it. Projects, photo references, and builds stay in the local `data/projects/` folder.
+
+The author's working copy is at `C:\Games\Cinder Junction\Cinder Workshop`; it uses the same launch command. The download is a clean source copy and does not include the author's project data or logs.
+
+The full local loop supports:
+
+- Saved projects, written briefs, change notes, and a JPEG reference photo compressed in the browser.
+- Separate known-fact and estimate notes by region. The image and notes are saved as review context, not measurements or geometry instructions.
+- Manual tower controls for height, base radius, fins, core size, and palette.
+- Real Blender builds with logs, progress polling, cancellation, and a separate folder for each version.
+- A live Three.js preview of the exported GLB with orbit, frame, top view, wireframe, mesh statistics, a one-metre grid, and scale marker.
+- Per-version snapshots of the trusted recipe code and hash, parameters, Blender version, checks, outputs, and review notes.
+- Automatic mesh and export checks, version history, accept/reject review, plus GLB and editable Blender source downloads.
+
+Failed or cancelled builds keep previous outputs usable. Automated checks cover geometry and export constraints; the person reviewing the model decides whether its shape and materials look right. The captured [workbench screen](assets/cinder-workshop-build.jpg) shows a built version and review controls. The [photo-reference screen](assets/cinder-workshop-reference.jpg) shows the saved photo with separate facts and estimates.
+
+The main purpose remains a quick path from a photo or description to a real 3D object that can be viewed and tested in a game engine. This draft does **not** interpret a photo or description into geometry: the user sets the manual controls for the one tower recipe. It makes zero model calls, has no measured token or cost tracking, no saved custom recipe presets, and no print export. No slicer review or physical print has been tested.
+
+The next milestones are bounded photo/description interpretation, reusable presets and structured instructions, and per-stage tracking of tokens, retries, accepted versions, and billable cost where known. A separate print profile could prepare physical props, but it needs real dimensions, connected solids, thickness checks, and slicer review. Efficiency should be measured as tokens and cost per accepted asset alongside quality, not assumed from elapsed time.
 
 ## Source records
 

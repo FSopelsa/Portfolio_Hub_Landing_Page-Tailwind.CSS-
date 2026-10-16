@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Felix's personal projects: an AI-assisted 3D asset showcase and workflow, music libraries, web applications, and game experiments.">
+  <meta name="description" content="Felix's personal projects: an AI-assisted 3D asset workflow, a local Blender workbench, music tools, web applications, and game experiments.">
   <meta name="theme-color" content="#f4f3ec">
   <title>Felix — Projects &amp; experiments</title>
   <link rel="stylesheet" href="assets/site.css">
@@ -17,8 +17,9 @@
       <span class="flex size-10 items-center justify-center rounded-full bg-ink text-xl font-bold text-paper" aria-hidden="true">f.</span>
       <span class="text-sm font-semibold tracking-tight">Felix <span class="font-normal text-muted">/ personal projects</span></span>
     </a>
-    <nav aria-label="Main navigation" class="flex items-center gap-5 text-sm sm:gap-8">
+    <nav aria-label="Main navigation" class="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 text-sm sm:gap-x-8">
       <a href="#projects" class="underline-offset-4 hover:underline">Projects</a>
+      <a href="#cinder-workshop" class="underline-offset-4 hover:underline">Cinder Workshop</a>
       <a href="#workflow" class="underline-offset-4 hover:underline">Workflow</a>
       <a href="#about" class="underline-offset-4 hover:underline">About</a>
       <a href="https://github.com/FSopelsa" class="font-semibold underline-offset-4 hover:underline">GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
@@ -103,16 +104,16 @@
     <section id="workflow" aria-labelledby="workflow-title" class="mx-auto max-w-7xl border-b border-line px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
       <div class="grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
         <div><p class="mb-4 font-mono text-xs uppercase tracking-[.16em] text-muted">The making of / Cinder Foundry</p><h2 id="workflow-title" class="text-4xl leading-[1.08] font-medium tracking-[-.045em] sm:text-5xl">From an instruction<br>to an asset.</h2></div>
-        <div><p class="text-lg leading-8 text-muted">The main purpose is to get a usable 3D object quickly from just a photo or description, so it can be viewed and tested inside a game engine. I'm developing a repeatable methodology around that journey, aiming to preserve quality while gradually using fewer tokens and costing less to run.</p><a href="WORKFLOW.md" class="mt-5 inline-block text-sm font-semibold underline decoration-line underline-offset-4 hover:decoration-ink">Read the complete workflow guide <span aria-hidden="true">↗&#xfe0e;</span></a></div>
+        <div><p class="text-lg leading-8 text-muted">The goal is a quick path from a photo or written description to a real 3D object that can be viewed and tested inside a game engine. Cinder Foundry documents the original asset pipeline; Cinder Workshop is a local, manual-control prototype building toward that result.</p><a href="WORKFLOW.md" class="mt-5 inline-block text-sm font-semibold underline decoration-line underline-offset-4 hover:decoration-ink">Read the complete workflow guide <span aria-hidden="true">↗&#xfe0e;</span></a></div>
       </div>
 
       <div class="mt-10 rounded-xl bg-[#efe8dc] p-6 sm:p-8">
         <p class="mb-3 font-mono text-xs uppercase tracking-[.16em] text-muted">Where the methodology is heading</p>
         <h3 class="text-2xl font-semibold tracking-tight">More quality from every iteration.</h3>
         <div class="mt-6 grid gap-7 md:grid-cols-3">
-          <div><h4 class="text-sm font-semibold">Fewer tokens, reusable knowledge</h4><p class="mt-2 text-sm leading-7 text-muted">Keep successful recipes, concise instructions, and local validation so each asset needs less repeated explanation and fewer retries. Lower spending is a goal to measure against accepted results.</p></div>
-          <div><h4 class="text-sm font-semibold">A photo or description is enough to start</h4><p class="mt-2 text-sm leading-7 text-muted">The intended starting point is a single photo or short description. Optional measurements can improve accuracy; the workflow makes assumptions about scale and hidden surfaces visible.</p></div>
-          <div><h4 class="text-sm font-semibold">From screen to physical prop</h4><p class="mt-2 text-sm leading-7 text-muted">3D models can be prepared and exported for a slicer and 3D printer, creating physical props. A printable version needs appropriate scale, solid geometry, and sufficient thickness; these assets have not yet been checked for printing.</p></div>
+          <div><h4 class="text-sm font-semibold">Fewer tokens, reusable knowledge</h4><p class="mt-2 text-sm leading-7 text-muted">Cinder Workshop currently runs a trusted Blender recipe locally with no model calls. Reusable instructions, saved controls, and deterministic checks are groundwork for reducing future token use and spending; savings have not been measured.</p></div>
+          <div><h4 class="text-sm font-semibold">Photo or description to 3D</h4><p class="mt-2 text-sm leading-7 text-muted">The destination is an actual 3D object from a photo or written description, ready to view and test inside a game engine. Today, the app saves photos and regional facts or estimates as context; manual controls still shape the geometry.</p></div>
+          <div><h4 class="text-sm font-semibold">Game output first; physical props later</h4><p class="mt-2 text-sm leading-7 text-muted">The current tool exports GLB and editable Blender source for game use. A separate print path could create physical props, but print export, thickness and solid-geometry checks, and slicer review are not implemented.</p></div>
         </div>
       </div>
 
@@ -158,13 +159,52 @@ the actual tools, sources, limitations, and instructions used.</code></pre>
         <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold"><a href="assets/skill-lock.json" class="underline underline-offset-4">Saved skill lock</a><a href="assets/asset-notes.md" class="underline underline-offset-4">Production provenance</a><a href="assets/technical.md" class="underline underline-offset-4">Original rebuild instructions</a></div>
       </details>
 
-      <details class="mt-8 border-t border-line pt-6">
-        <summary class="w-fit cursor-pointer text-sm font-semibold underline-offset-4 hover:underline">The next step: Cinder Workshop</summary>
-        <div class="mt-5 grid gap-7 md:grid-cols-2">
-          <div><h3 class="text-lg font-semibold">A personal photo-to-game-asset workbench</h3><p class="mt-2 text-sm leading-7 text-muted">An app that quickly takes a photo or description to an actual 3D object for engine testing, keeping its brief, recipe, versions, checks, and token spending together. An extended design vocabulary of my own and a separate physical-prop export path would make the workflow distinctive.</p></div>
-          <div><h3 class="text-lg font-semibold">Lessons learned so far</h3><p class="mt-2 text-sm leading-7 text-muted">First organize and preview an existing asset with its production record. Then add recipe controls, a Blender build action, and separate game and print exports. This is a planned upcoming app direction; the current page showcases some of the existing work.</p></div>
+      <div class="mt-8 border-t border-line pt-6"><p class="text-sm leading-7 text-muted">That workflow now has a working local prototype. <a href="#cinder-workshop" class="font-semibold underline underline-offset-4">See Cinder Workshop and its current limits <span aria-hidden="true">↓</span></a></p></div>
+    </section>
+
+    <section id="cinder-workshop" aria-labelledby="cinder-workshop-title" class="bg-ink text-paper">
+      <div class="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+          <div>
+            <p class="mb-5 font-mono text-xs uppercase tracking-[.16em] text-accent">02 / Browser trial + local workbench</p>
+            <h2 id="cinder-workshop-title" class="max-w-xl text-4xl leading-[1.08] font-medium tracking-[-.045em] sm:text-5xl">A recipe. A real model.<br>Two ways to build.</h2>
+            <p class="mt-6 text-lg leading-8 text-paper/80">Try a small Cinder Tower generator in your browser, then download its GLB. The full local Cinder Workshop uses Blender for editable source files, saved versions, build checks, and review.</p>
+            <p class="mt-4 text-sm leading-7 text-paper/65">The browser trial makes the mesh on your device, needs no account, and allows two builds in this browser. It is a simpler build of the same recipe controls; it does not interpret a photo or description into geometry.</p>
+          </div>
+          <figure>
+            <img src="assets/cinder-workshop-build.jpg" width="1442" height="1265" loading="lazy" alt="Cinder Workshop showing recipe controls, an inspected 3D tower, version history, automatic checks, and GLB and Blender source downloads" class="w-full rounded-xl border border-white/15 bg-[#202522]">
+            <figcaption class="mt-3 text-xs leading-5 text-paper/65">Full local Workshop: a Blender build with preview, version journal, checks, review notes, and GLB plus editable source downloads.</figcaption>
+          </figure>
         </div>
-      </details>
+
+        <div class="mt-10 grid gap-7 border-t border-white/15 pt-8 md:grid-cols-3">
+          <div><p class="font-mono text-xs text-accent">01 / SHAPE</p><h3 class="mt-3 text-lg font-semibold">One editable tower recipe</h3><p class="mt-2 text-sm leading-7 text-paper/70">Save a project brief and set height, base radius, number of fins, core size, and material palette. A build note records what changed.</p></div>
+          <div><p class="font-mono text-xs text-accent">02 / INSPECT</p><h3 class="mt-3 text-lg font-semibold">Preview the actual GLB</h3><p class="mt-2 text-sm leading-7 text-paper/70">Orbit the model, frame it, switch to top view or wireframe, and compare it with a one-metre marker. Build logs and mesh checks are available beside it.</p></div>
+          <div><p class="font-mono text-xs text-accent">03 / REVIEW</p><h3 class="mt-3 text-lg font-semibold">Keep or reject each version</h3><p class="mt-2 text-sm leading-7 text-paper/70">Compare earlier builds, read automatic checks, add review notes, accept or reject, then download the GLB and editable Blender file. Failed builds leave earlier outputs intact.</p></div>
+        </div>
+
+        <div class="mt-10 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+          <div class="rounded-xl bg-white/5 p-6 sm:p-8">
+            <p class="font-mono text-xs uppercase tracking-[.16em] text-accent">Current limits / next milestones</p>
+            <p class="mt-4 text-sm leading-7 text-paper/80">A photo can be saved with known facts and uncertain estimates by region. Those references remain separate from the mesh: the app does not yet interpret a photo or description into geometry. It currently supports one tower recipe, manual controls, and zero model calls.</p>
+            <p class="mt-4 text-sm leading-7 text-paper/80">The longer goal is a streamlined photo-or-description-to-model workflow that can reach similar quality with fewer tokens and lower spending. Usage tracking, saved custom presets, and automatic image interpretation are future work. A separate, checked print export could turn models into physical props; print preparation and printer use have not been tested.</p>
+          </div>
+          <details class="rounded-xl border border-white/15 p-5">
+            <summary class="cursor-pointer text-sm font-semibold underline-offset-4 hover:underline">See the saved photo and region notes</summary>
+            <figure class="mt-5">
+              <img src="assets/cinder-workshop-reference.jpg" width="1442" height="1597" loading="lazy" alt="Cinder Workshop with a locally saved reference photo, separate known facts and estimates, manual controls, and version history" class="w-full rounded-lg border border-white/15 bg-[#202522]">
+              <figcaption class="mt-3 text-xs leading-5 text-paper/65">The reference board saves the image and regional notes for review; it does not infer or generate the mesh.</figcaption>
+            </figure>
+          </details>
+        </div>
+
+        <div class="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4 border-t border-white/15 pt-7">
+          <a href="showcase/workshop-demo/" class="inline-flex items-center gap-5 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-[#e9f2bd]">Try the two-build browser demo <span aria-hidden="true">↗&#xfe0e;</span></a>
+          <a href="assets/cinder-workshop-local.zip" download class="text-sm font-semibold underline underline-offset-4">Download the full local Workshop</a>
+          <a href="WORKFLOW.md#cinder-workshop-full-local-workflow" class="text-sm font-semibold underline underline-offset-4">Use the full local Blender workflow</a>
+          <p class="max-w-2xl text-xs leading-6 text-paper/65">The browser demo exports a GLB. The local app also saves projects and downloads editable <code class="text-paper">.blend</code> source. It needs Node 22+ and Blender installed on your computer.</p>
+        </div>
+      </div>
     </section>
 
     <!-- Add or replace an entire article to change the project selection. -->
@@ -195,8 +235,18 @@ the actual tools, sources, limitations, and instructions used.</code></pre>
           <a href="https://github.com/FSopelsa/Ett-litet-spel" class="mt-7 flex items-center justify-between border-t border-ink/15 pt-5 text-sm font-semibold underline-offset-4 hover:underline">Explore Ett-litet-spel on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a>
         </article>
 
+        <article class="flex flex-col rounded-xl border border-line bg-[#e9edde] p-7 sm:p-9">
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Local tool / 3D asset workflow</span><span class="font-mono text-xs text-muted">03</span></div>
+          <p class="mb-6 font-serif text-2xl italic text-[#56703b]">Brief. Build. Review.</p>
+          <h3 class="text-2xl font-semibold tracking-tight">Cinder Workshop</h3>
+          <p class="mt-3 text-sm leading-7 text-muted">A local Blender workbench for making versioned tower assets from a saved brief and manual recipe controls. Save photo references and region notes, preview each GLB, review checks and logs, accept or reject builds, and download the model plus editable Blender source.</p>
+          <p class="mt-4 text-sm leading-6"><span class="font-semibold">What to explore:</span> repeatable recipe builds, 3D inspection, and version review. Photo interpretation is still a future step.</p>
+          <div class="mt-7 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-ink/15 px-3 py-1">Node.js</span><span class="rounded-full border border-ink/15 px-3 py-1">Blender Python</span><span class="rounded-full border border-ink/15 px-3 py-1">Three.js</span></div>
+          <a href="#cinder-workshop" class="mt-7 flex items-center justify-between border-t border-ink/15 pt-5 text-sm font-semibold underline-offset-4 hover:underline">See the local workbench and its limits <span aria-hidden="true">↑</span></a>
+        </article>
+
         <article class="flex flex-col rounded-xl border border-line bg-[#efe8dc] p-7 sm:p-9">
-          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Web / application</span><span class="font-mono text-xs text-muted">03</span></div>
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Web / application</span><span class="font-mono text-xs text-muted">04</span></div>
           <p class="mb-6 font-serif text-2xl italic text-[#856541]">Choose. Reserve. Drive.</p>
           <h3 class="text-2xl font-semibold tracking-tight">Car Rental</h3>
           <p class="mt-3 text-sm leading-7 text-muted">A rental application connecting a React interface to a Spring backend and PostgreSQL. Booking logic validates dates and checks for overlapping rentals before saving a reservation.</p>
@@ -206,7 +256,7 @@ the actual tools, sources, limitations, and instructions used.</code></pre>
         </article>
 
         <article class="flex flex-col rounded-xl border border-line bg-[#ece8ee] p-7 sm:p-9">
-          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Game / addon prototype</span><span class="font-mono text-xs text-muted">04</span></div>
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Game / addon prototype</span><span class="font-mono text-xs text-muted">05</span></div>
           <p class="mb-6 font-mono text-xl text-[#74647e]">/tdata search</p>
           <h3 class="text-2xl font-semibold tracking-tight">TurtleData</h3>
           <p class="mt-3 text-sm leading-7 text-muted">A Lua addon experiment with slash commands, a search-window scaffold, and tooltip hooks that display item IDs. Database search is still a planned feature.</p>
@@ -216,7 +266,7 @@ the actual tools, sources, limitations, and instructions used.</code></pre>
         </article>
 
         <article class="flex flex-col rounded-xl border border-line bg-[#e9edde] p-7 sm:p-9">
-          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Desktop / game prototype</span><span class="font-mono text-xs text-muted">05</span></div>
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Desktop / game prototype</span><span class="font-mono text-xs text-muted">06</span></div>
           <p class="mb-6 font-serif text-2xl italic text-[#56703b]">Explore. Battle. Catch.</p>
           <h3 class="text-2xl font-semibold tracking-tight">Poklone</h3>
           <p class="mt-3 text-sm leading-7 text-muted">An original creature-battling game built in Java. Explore a tile-based practice room, encounter a creature, then battle or catch it with a small party. Swing and terminal interfaces share the same game rules.</p>
@@ -226,7 +276,7 @@ the actual tools, sources, limitations, and instructions used.</code></pre>
         </article>
 
         <article class="flex flex-col rounded-xl border border-line bg-[#e9edde] p-7 sm:p-9">
-          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Music / personal tool</span><span class="font-mono text-xs text-muted">06</span></div>
+          <div class="mb-8 flex items-center justify-between"><span class="font-mono text-xs uppercase tracking-widest text-muted">Music / personal tool</span><span class="font-mono text-xs text-muted">07</span></div>
           <p class="mb-6 flex flex-wrap items-center gap-3 font-serif text-2xl italic text-[#56703b]" aria-label="Artist to album to track"><span>Artist</span><span aria-hidden="true">→</span><span>Album</span><span aria-hidden="true">→</span><span>Track</span></p>
           <h3 class="text-2xl font-semibold tracking-tight">Artists <span class="text-base font-normal text-muted">/ Orgnsort</span></h3>
           <p class="mt-3 text-sm leading-7 text-muted">A Spicetify app that turns saved albums and liked songs into an expandable artist library. Open an album to load its tracks, then play it in its original album context.</p>
@@ -238,7 +288,7 @@ the actual tools, sources, limitations, and instructions used.</code></pre>
     </section>
 
     <section id="about" aria-labelledby="about-title" class="mx-auto grid max-w-7xl gap-8 border-t border-line px-6 py-16 sm:px-10 lg:grid-cols-2 lg:px-12">
-      <div><p class="mb-4 font-mono text-xs uppercase tracking-[.16em] text-muted">03 / The person behind the projects</p><h2 id="about-title" class="text-4xl font-medium tracking-[-.045em]">Learning by making.</h2></div>
+      <div><p class="mb-4 font-mono text-xs uppercase tracking-[.16em] text-muted">04 / The person behind the projects</p><h2 id="about-title" class="text-4xl font-medium tracking-[-.045em]">Learning by making.</h2></div>
       <div class="max-w-lg"><p class="text-lg leading-8 text-muted">I like projects with something tangible at the end: a tool I can use, a game I can play, or an idea I can see in 3D. This is a small selection of those experiments and the code behind them.</p><p class="mt-5 text-sm leading-7 text-muted">My work spans Java, JavaScript, TypeScript, Python, and Lua. Each project gives me a different problem to work through.</p><a href="https://github.com/FSopelsa" class="mt-7 inline-flex items-center gap-8 rounded-full bg-ink px-6 py-3.5 text-sm font-medium text-paper transition-colors hover:bg-[#3b4c3d]">Find me on GitHub <span aria-hidden="true">↗&#xfe0e;</span></a></div>
     </section>
   </main>
