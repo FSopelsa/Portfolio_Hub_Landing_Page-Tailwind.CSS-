@@ -12,7 +12,7 @@ python -m http.server 5173 --bind 127.0.0.1
 
 Open <http://127.0.0.1:5173>. A local server is required for the interactive gallery and browser trial. The stylesheet, images, JavaScript modules, and models are served locally; the site needs no CDN or runtime CSS compiler.
 
-The page has an introduction, an asset showcase, a workflow guide, a Cinder Workshop case study, seven selected project cards, an about section, and GitHub links. Edit the copy and utility classes directly in `index.html`, and the theme and base styles in `styles/input.css`. Comments mark the main places to customize. The homepage runs without JavaScript.
+The page has an introduction, one featured Cinder Foundry and Workshop case study, six selected project cards, an about section, and GitHub links. The full asset workflow and local Blender setup stay in `WORKFLOW.md`; the main page keeps the feature compact beside the other projects. Edit the copy and utility classes directly in `index.html`, and the theme and base styles in `styles/input.css`. Comments mark the main places to customize. The homepage runs without JavaScript.
 
 After changing Tailwind classes or source styles, rebuild the checked-in `assets/site.css` with Node.js and npm:
 
