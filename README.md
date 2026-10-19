@@ -27,12 +27,12 @@ Run `npm.cmd run build:site` to refresh the stylesheet and prepare the static si
 
 ## Web delivery optimization
 
-The two original PNGs were replaced with WebP images at widths suited to the page, with smaller `srcset` variants for phones. Two Cinder Workshop UI captures were added as JPEGs. All six GLBs use lossless WebP compression for their embedded textures at the original texture resolutions. Geometry, hierarchy, sockets, animations, and decoded texture pixels are preserved. The existing Three.js loader supports `EXT_texture_webp`; no additional decoder is needed.
+The two original PNGs were replaced with WebP images at widths suited to the page, with smaller `srcset` variants for phones. Two Cinder Workshop UI captures were added as JPEGs. The six original Foundry GLBs use lossless WebP compression for their embedded textures at the original texture resolutions. Geometry, hierarchy, sockets, animations, and decoded texture pixels are preserved. The gallery now also carries two optimized Siege character exports; its local Three.js loader uses the Meshopt decoder for these game builds.
 
 | Files | Original bytes | Delivered bytes | Reduction |
 | --- | ---: | ---: | ---: |
 | Page images (including screenshots and responsive variants) | 8,325,143 | 675,417 | 91.9% |
-| Six GLBs | 26,410,872 | 19,191,848 | 27.3% |
+| Six original Foundry GLBs | 26,410,872 | 19,191,848 | 27.3% |
 | Combined | 34,736,015 | 19,867,265 | 42.8% |
 
 The minified local stylesheet is 20,439 bytes. These figures describe file sizes, not a measured connection speed or frame-rate improvement. Model compression reduces downloads; texture resolution, triangle counts, and GPU memory use are unchanged. The turntable video retains its original encoding and loads on demand.
@@ -47,7 +47,7 @@ The optimizer reads the original delivery and writes this portfolio's WebP image
 
 ## Assets showcase
 
-The page presents the **AI-assisted Cinder Foundry asset process** and two ways to try **Cinder Workshop**. The browser trial builds a simplified tower mesh on the visitor's device, previews it, and exports a GLB, with two builds stored per browser. It makes no server or model calls. The full local prototype uses Blender and adds project history, checks, review, and editable `.blend` downloads. Its photo and regional notes are context only; photo/description interpretation, token tracking, and print export have not been implemented. [WORKFLOW.md](WORKFLOW.md) explains both paths and their limits.
+The page presents the **AI-assisted Cinder Foundry asset process** and two ways to try **Cinder Workshop**. Its gallery now includes the updated Clampwright engineer and Blue Humanoid character placed in Sundown's Siege environment. The browser trial builds a simplified tower mesh on the visitor's device, previews it, and exports a GLB, with two builds stored per browser. It makes no server or model calls. The full local prototype uses Blender and adds project history, checks, review, and editable `.blend` downloads. Its photo and regional notes are context only; photo/description interpretation, token tracking, and print export have not been implemented. [WORKFLOW.md](WORKFLOW.md) explains both paths and their limits.
 
 The development goal is to quickly turn a photo or description into an actual 3D object for viewing, placement, and testing inside a game engine. Both current paths still use manual controls; neither interprets the photo or description. The browser trial creates a lightweight GLB in the visitor's browser. The full local app runs the Blender recipe and can also download editable `.blend` source. Reusable instructions aim to reduce future token use and spending, but savings have not been measured. Print export is also future work.
 
@@ -69,8 +69,8 @@ The original Foundry source delivery remains separate from these optimized portf
 
 ## Checks for this delivery
 
-On 15 October 2026, the CSS build and watch startup succeeded, and npm's dependency audit reported zero vulnerabilities. The asset optimizer compared all model accessor data, node hierarchy and transforms, animation targets, and decoded texture pixels against the original files; all six GLBs passed Khronos validation with zero errors and warnings.
+On 15 October 2026, the CSS build and watch startup succeeded, and npm's dependency audit reported zero vulnerabilities. The asset optimizer compared all model accessor data, node hierarchy and transforms, animation targets, and decoded texture pixels against the original files; all six original Foundry GLBs passed Khronos validation with zero errors and warnings.
 
 On 16 October 2026, the Cinder Workshop project section and its two captured screens were added, and `npm.cmd run build` regenerated the stylesheet. The separate local Cinder Workshop app was not started as part of this portfolio edit.
 
-The previous portfolio version was inspected in the Codex browser at its default desktop viewport and at 390 × 844. The local stylesheet and WebP images loaded, its links resolved, and the phone layout had no horizontal overflow. The gallery rendered all four assets at LOD 1 and loaded the detail towers at LOD 0, reporting the original 32,751 and 88,060 ensemble triangle counts. That inspection predates the browser workshop trial added in this update.
+On 19 October 2026, the gallery loaded both new game exports, and the Clampwright and Blue Humanoid entries rendered with their recorded 18,608 and 67,342 triangle counts. The Clampwright detail view was visually checked in the browser. The full game and its Siege scene were not rerun in this portfolio update.

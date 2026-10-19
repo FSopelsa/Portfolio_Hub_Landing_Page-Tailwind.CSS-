@@ -2,7 +2,9 @@
 
 This is an AI-assisted asset production case study for **Sundown at Cinder Junction**. It presents the assets and the recorded production process. The preserved scripts are procedural authoring tools.
 
-The case study covers four assets: **Ember Reliquary**, **Wayfarer Condenser**, **Frontier Cell Cache**, and **Junction Paving**. The two towers each have detail and battlefield exports, for six GLB files total.
+The interactive gallery covers six game assets: **Ember Reliquary**, **Wayfarer Condenser**, **Frontier Cell Cache**, **Junction Paving**, **Clampwright**, and **Blue Humanoid**. The original Foundry production record covers the first four; the two character entries document later additions to the Siege environment. The towers each have detail and battlefield exports.
+
+Clampwright is a reference-led workshop engineer with an animated idle pose. Blue Humanoid is a seated decorative character with a gentle crown animation. Both are displayed from the game's optimized GLB exports; the gallery uses Meshopt decoding for these files. Sundown's records describe the user-supplied Blue Humanoid as their own asset, but do not independently certify its licence. Clampwright's source notes also say the underlying toy design rights were not supplied.
 
 ## The goal of the methodology
 

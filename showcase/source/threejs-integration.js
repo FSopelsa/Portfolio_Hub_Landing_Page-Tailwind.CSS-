@@ -1,12 +1,15 @@
 /** Presentation-only helper. The game's JavaScript simulation decides when to fire. */
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.mjs';
 
 export const cinderAssets = {
   ember: 'ember-reliquary',
   condenser: 'wayfarer-condenser',
   paving: 'junction-paving',
   cache: 'frontier-cell-cache',
+  clampwright: 'cinder-clampwright',
+  meditator: 'cinder-blue-humanoid',
 };
 
 /**
@@ -21,7 +24,7 @@ export async function loadCinderTemplate(key, {
   if (!Object.values(cinderAssets).includes(id)) throw new Error(`Unknown asset: ${key}`);
   const hasLOD = id === cinderAssets.ember || id === cinderAssets.condenser;
   const suffix = hasLOD && lod === 1 ? '-lod1' : '';
-  const gltf = await new GLTFLoader().loadAsync(`${baseURL}${id}${suffix}.glb`);
+  const gltf = await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync(`${baseURL}${id}${suffix}.glb`);
   return gltf;
 }
 

@@ -32,13 +32,15 @@ const edge=new THREE.Mesh(new THREE.TorusGeometry(4.14,.012,5,160),new THREE.Mes
 const field=new THREE.Group();scene.add(field);
 const models=new Map(),mixers=new Map(),instances=new Map(),manifest=new Map();let current='ensemble',motion=true,wireframe=false,lod=1,pulseTime=-10,visualTime=0,transition=null;
 const clock={elapsedTime:0,last:performance.now(),getDelta(){const now=performance.now();const dt=(now-this.last)/1000;this.last=now;this.elapsedTime+=dt;return dt;}};
-const ids=['ember-reliquary','wayfarer-condenser','frontier-cell-cache','junction-paving'];
+const ids=['ember-reliquary','wayfarer-condenser','frontier-cell-cache','junction-paving','cinder-clampwright','cinder-blue-humanoid'];
 const labels={
   ensemble:['Cinder Foundry','FRONTIER ENGINEERING / ALIEN RITUAL','Machines with a second life.<br>Sanctuaries with a purpose.'],
   'ember-reliquary':['Ember Reliquary','01 / ELEMENTAL DEFENSE TOWER','A captive furnace. Three inscribed heat shields. Built to hold the line.'],
   'wayfarer-condenser':['Wayfarer Condenser','02 / SUPPORT STRUCTURE','A cool current beneath weathered copper. An asymmetric silhouette for a different battlefield role.'],
   'frontier-cell-cache':['Frontier Cell Cache','03 / WORLD PROP','Replaceable cells and field supplies. Hand-carried, repaired, used again.'],
-  'junction-paving':['Junction Paving','04 / MODULAR GROUND','Six stone segments, expansion joints, and copper tracery. A small piece of a larger place.']
+  'junction-paving':['Junction Paving','04 / MODULAR GROUND','Six stone segments, expansion joints, and copper tracery. A small piece of a larger place.'],
+  'cinder-clampwright':['Clampwright','05 / WORKSHOP ENGINEER','A reference-led character, now stationed beside the Siege upgrade bench. The updated robe, clasped pose, and animated eye stalks are built into the game.'],
+  'cinder-blue-humanoid':['Blue Humanoid','06 / IRRADIATED MEDITATOR','A seated character placed beside the cooling plant. Its softly moving crown and cyan light are now part of the Siege environment.']
 };
 let loadCount=0;
 async function loadAsset(id,level=0){
@@ -79,8 +81,8 @@ function updateStats(){
   document.querySelector('#stats').textContent=`${Math.round(tris).toLocaleString()} triangles · ${draws} material draws · LOD ${lod}`;
 }
 function framing(view='orbit'){
-  const h=current==='ensemble'?5.1:current==='ember-reliquary'?5.1:current==='wayfarer-condenser'?3.25:current==='frontier-cell-cache'?1.15:1.5;
-  const y=current==='junction-paving'?.08:current==='frontier-cell-cache'?.32:h*.43;
+  const h=current==='ensemble'?5.1:current==='ember-reliquary'?5.1:current==='wayfarer-condenser'?3.25:current==='frontier-cell-cache'?1.15:current==='cinder-clampwright'?2.1:current==='cinder-blue-humanoid'?2.6:1.5;
+  const y=current==='junction-paving'?.08:current==='frontier-cell-cache'?.32:current==='cinder-blue-humanoid'?.85:h*.43;
   let target=new THREE.Vector3(0,y,0),position;
   const s=h/5.1;
   if(view==='top'){target.y=1.75*s;position=new THREE.Vector3(1.8*s,14.2*s,9.2*s);}
