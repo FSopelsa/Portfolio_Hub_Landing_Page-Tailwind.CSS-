@@ -33,6 +33,7 @@ const field=new THREE.Group();scene.add(field);
 const models=new Map(),mixers=new Map(),instances=new Map(),manifest=new Map();let current='ensemble',motion=true,wireframe=false,lod=1,pulseTime=-10,visualTime=0,transition=null;
 const clock={elapsedTime:0,last:performance.now(),getDelta(){const now=performance.now();const dt=(now-this.last)/1000;this.last=now;this.elapsedTime+=dt;return dt;}};
 const ids=['ember-reliquary','wayfarer-condenser','frontier-cell-cache','junction-paving','cinder-clampwright','cinder-blue-humanoid'];
+const ensembleIds=ids.slice(0,4);
 const labels={
   ensemble:['Cinder Foundry','FRONTIER ENGINEERING / ALIEN RITUAL','Machines with a second life.<br>Sanctuaries with a purpose.'],
   'ember-reliquary':['Ember Reliquary','01 / ELEMENTAL DEFENSE TOWER','A captive furnace. Three inscribed heat shields. Built to hold the line.'],
@@ -63,7 +64,7 @@ function modelLOD(id){return lod&&['ember-reliquary','wayfarer-condenser'].inclu
 function activeKey(id){return id+':'+modelLOD(id);}
 function showModels(){
   for(const m of models.values()){m.visible=false;m.position.set(0,0,0);m.rotation.set(0,0,0);m.scale.setScalar(1);}
-  const show=current==='ensemble'?ids:[current];
+  const show=current==='ensemble'?ensembleIds:[current];
   for(const id of show){const m=models.get(activeKey(id));if(!m)continue;m.visible=true;
     if(current==='ensemble'){
       if(id==='ember-reliquary')m.position.set(-1.38,.024,0);
@@ -76,7 +77,7 @@ function showModels(){
   updateStats();
 }
 function updateStats(){
-  const show=current==='ensemble'?ids:[current];let tris=0,draws=0;
+  const show=current==='ensemble'?ensembleIds:[current];let tris=0,draws=0;
   for(const id of show){const s=manifest.get(activeKey(id));if(s){tris+=s.triangles;draws+=s.primitives;}}
   document.querySelector('#stats').textContent=`${Math.round(tris).toLocaleString()} triangles · ${draws} material draws · LOD ${lod}`;
 }
